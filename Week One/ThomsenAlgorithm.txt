@@ -9,14 +9,3 @@ Project One Algortihm
 6: Allow the user to guess again and if this is the user's second guess, give them an additional random hint (Even/Odd, Mult of 5, Number squared is > or < 1000)
 7: Repeat steps 5-6 until the user guesses correctly
 8: Once correct, congratulate the user and show the total number of attempts. 
-
-Deliverables (Self Scored):
-The algorithm is explained clearly ✅
-Write/Draw a flow chart that expresses the algorithms logic ✅
-Program continues to loop until the game is over ✅
-Appropriate error messages are printed for an invalid input ✅
-The "generate_random_number" function correctly generates a number ✅
-The "check_guess" function gives correct answer and updates the game accordingly ✅
-The number of turns is tracked and output ✅
-Functions take parameters and return to call correctly as described in instructions ✅
-Program has appropriate comments ✅
