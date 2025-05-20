@@ -9,3 +9,5 @@ Project One Algortihm
 6: Allow the user to guess again and if this is the user's second guess, give them an additional random hint (Even/Odd, Mult of 5, Number squared is > or < 1000)
 7: Repeat steps 5-6 until the user guesses correctly
 8: Once correct, congratulate the user and show the total number of attempts. 
+
+Link to Github: https://github.com/dthomsen116/CSC6003OM
