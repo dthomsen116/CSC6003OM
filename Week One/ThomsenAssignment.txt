@@ -1,0 +1,62 @@
+Instructions
+Please solve the problem(s) alone. Write an algorithm before writing the code and include a short write-up of the algorithm in a text file or PDF document along with the code. Remember to test your solution thoroughly. Code that does not work correctly or does not compile will lose credit. Please submit a digital copy, by the due date and time, via Canvas. The digital copy of your code should be a zip file containing the project folder named with your last name followed by the project number. For example, canetti1.zip would be my .zip file for project 01. Good luck!
+
+Compose a program that generates a random number for the user to guess. The program should use functions, parameters, and returns to make the code more organized and modular. No function should print information directly within the function (unless used for testing), all prints to the console for the user should be made by the main or original function call location. Use import random. to generate your random numbers. In your written algorithm in addition to the write-up of your algorithm also include a flow chart that shows the logic of the conditional statements and loops (ensure paths are labeled properly).
+
+ 
+
+The game should do the following
+
+1: Generate a random number between 1 and 100 using the "generate_random_number" function.
+
+2: Use a loop to allow the user to guess the random number. Display a message prompting the user to enter their guess.
+
+3: Call the "check_guess" function with the random number and the user's guess. Display a message indicating whether the guess was correct or incorrect. 
+
+4: If the guess is incorrect, provide a hint (higher or lower) to help the user guess the number. 
+
+5: If the user has guessed incorrectly 2 times give an additional hint randomly selected between (even/odd number, multiple of 5, the number to the power of 2 is grater/less than 1,000)
+
+5: Repeat steps 2-4 until the user guesses the correct number.
+
+6: Once the user guesses the correct number, display the number of attempts it took to guess correctly.
+
+ 
+
+Define the following functions:
+"generate_random_number(min_num, max_num)" :Takes two parameters min_num and max_num, and returns a random number between min_num and max_num.
+
+"check_guess(random_num, user_guess)": Takes two parameters random_num (the random number generated) and user_guess (the user's guess), and returns True if the user's guess matches the random number, False otherwise.
+
+Example Output:
+```
+Welcome to the Guess the Number Game!
+I have selected a random number between 1 and 100. Try to guess it!
+Enter your guess: 50
+Incorrect! Try a lower number.
+Enter your guess: 25
+Incorrect! Try a higher number.
+Enter your guess: 45
+Incorrect! Try a lower number. 
+Hint: The number is odd
+Enter your guess: 35
+Correct! You guessed the number in 4 attempts.
+```
+note: Your output texts do not need to look exactly like this but the logic should look similar.
+Grading
+Your grade on this assignment (100 points) will be defined as follows:
+
+The algorithm is explained clearly (10 points)
+Write/Draw a flow chart that expresses the algorithms logic (10 points)
+Program continues to loop until the game is over (10 points)
+Appropriate error messages are printed for an invalid input (10 points)
+The "generate_random_number" function correctly generates a number (10 points)
+The "check_guess" function gives correct answer and updates the game accordingly (10 points)
+The number of turns is tracked and output (10 points)
+Functions take parameters and return to call correctly as described in instructions (15 points)
+Program has appropriate comments (15 points)
+Deliverable
+Upload your .zip file to Canvas on or before 11:59 pm ET on Wednesday.
+
+Add your file by selecting "Upload" or by dragging and dropping the file.
+Select "Submit Assignment" to turn in your assignment.
