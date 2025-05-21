@@ -1,0 +1,133 @@
+Instructions
+Please solve the problem(s) alone. Write the algorithm before writing the code and include a short writeup of algorithm in a text file or PDF document along with the code. Remember to test your solution thoroughly. Code that does not work correctly or does not compile will lose credit. Please submit a digital copy, by the due date and time, via Canvas. The digital copy of your code should be a zip file containing the project folder named with your last name followed by the project number. For example, canetti2.zip would be my .zip file for project 02. Good luck!
+
+In this project, you will implement a variation of the board game “Battleship”.1 You may have played this game as a kid (or an adult).  In Battleship, 5 ships are placed on a 10 x 10 grid and then you and your opponent take turns calling out a row/column until all the ships on your opponent’s grid are “hit” and “sunk”.  The first player to sink all of his/her opponent's ships wins.
+
+In this variation, we will use a two-dimensional array(or list) to represent your game board, randomly place 5 ships and then simulate an opponent trying to hit your ships by entering one column/row at a time from the keyboard until all your ships are sunk.  For simplicity, each ship will fill a single square on the grid.
+
+You will need to implement the following functions in addition to main:
+
+A function ‘drawBoard’ that takes one parameter as input: a 10 x 10 array(or list) of chars that represents the board. The function then displays the contents of the array(or list) - columns to the right, rows down (see my sample output).  The numbers 0-9 should be displayed along the top and left sides of the drawing to easily identify each column/row on the board.  Each square should display one of four possible characters:
+A dot ‘.‘ for any square that does not contain a ship and that has not yet been called out by the user at the keyboard
+The letter ‘S’ to represent one of the 5 ships on the board
+The letter ‘O’ to represent a row/column that was called out but did not contain a ship (i.e., a “miss”)
+The letter ‘X’ to represent a row/column that was called out and there was a ship there (i.e., a “hit”)
+A function ‘isGameOver’ that takes one parameter as input: a 10 x 10 array(or list) of chars that represents the board. The function should return ‘true’ if all the ships on the board have been hit/sunk (i.e., all of the ‘S’ squares have been replaced by ‘X’) and false otherwise.  
+A function ‘setupBoard’. The function should create a two-dimensional array(or list) that represents the board with each square initialized to a dot ‘.‘.  Then there should be an ‘S’ for each of the number of ships specified by the ‘NUM_SHIPS’ constant.  The ships should be placed on the board randomly using the ‘Random’ class to pick a random row and column.  If the same row/column is picked more than once, the function should continue to loop until all the ships are placed on different squares.  So, if NUM_SHIPS == 5, there should be 5 different squares with an ‘S’ and the rest of the squares should contain a dot ‘.‘ character.  
+A function ‘checkHitOrMiss’ that takes three parameters as input: a 10 x 10 array(or list) of chars that represents the board, and the column and row. The column and row represent the column and row entered by the user on the keyboard.  The function should check that column and row on the board and do the following:
+If the square contains a ship ‘S’, that square on the board should be updated to an ‘X’ to represent a hit and return the String “HIT”
+If the square already contains a sunk ship ‘X’, simply return the String “HIT”
+Otherwise, that square on the board should be updated to an ‘O’ to represent a miss and return the String “MISS”
+ 
+
+Your main function should do the following:
+
+Set up the game board
+Draw the board and prompt the user to enter a column (X)
+If the column is not a valid column on the board (i.e. less than 0 or greater than or equal to 10), display “Invalid column” and go back and ask the user to try again without checking the board
+Draw the board and prompt the user to enter a row (Y)
+If the row is not a valid row on the board (i.e. less than 0 or greater than or equal to 10), display “Invalid row” and go back and ask the user to try again without checking the board
+If the column and row are valid, check if the column/row is a hit or miss and print out the result to the user (“MISS” or “HIT”)
+Update the board with the appropriate character for the square that was entered (‘O’, ‘X’)
+If all the ships have been “HIT” and sunk, draw the board one last time then print “GAME OVER!” and end the game
+Otherwise, loop back to Step 2 and repeat until the game is over.
+Use this code as a template to get started
+
+Battleship_GK-1.pyDownload Battleship_GK-1.py
+
+1 – “Battleship” is a Trademark of Hasbro, Inc.
+
+You can use this code as a guide for your assignment
+
+TwoDArry.pyDownload TwoDArry.py
+
+Sample Output
+
+This is how your program should behave after it starts.
+
+Print out the board with 5 ships randomly placed
+Screen Shot 2022-05-03 at 6.40.33 AM.png
+
+Prompt user to enter a column/row and calculate if HIT or MISS
+Enter a column (X):
+
+4
+
+Enter a row (Y):
+
+7
+
+MISS
+
+Draw the current state of the board (note that a ‘O’ has been added to column 4, row 7 to indicate a MISS)
+Screen Shot 2022-05-03 at 6.42.09 AM.png
+
+If the user enters an invalid column:
+Enter a column (X):
+
+11
+
+Invalid column.
+
+If the user enters an invalid column:
+Enter a column (X):
+
+1
+
+Enter a row (Y):
+
+-1
+
+Invalid row.
+
+Continue to prompt user to enter a column/row and calculate if HIT or MISS
+Enter a column (X):
+
+8
+
+Enter a row (Y):
+
+2
+
+HIT
+
+Draw the current state of the board (note that a ‘X’ has replaced the ‘S’ to column 8, row 2 to indicate a HIT)
+Screen Shot 2022-05-03 at 6.43.57 AM.png
+
+| 4 |   |   |   |   |   |   |   |   |   |   |
+
++---+---+---+---+---+---+---+---+---+---+---+
+
+Be sure to draw the current state of the board after every turn.
+
+Once all of the ships have been ‘HIT’, print the state of the board and a message that says ‘GAME OVER!’ and end the program:
+
+Enter a column (X):
+
+9
+
+Enter a row (Y):
+
+5
+
+HIT
+
+Screen Shot 2022-05-03 at 6.45.05 AM.png
+
+GAME OVER!
+
+Grading
+Your grade on this assignment (100 points) will be defined as follows:
+
+The algorithm is explained clearly (10 points)
+Program continues to loop until the game is over (10 points)
+Appropriate error messages are printed for an invalid row or column (15 points)
+The setupBoard function correctly initializes the game board as specified (10 points)
+The game board is drawn properly after each turn (15 points)
+The checkHitOrMiss function gives correct answer and updates the game board array(or list) (10 points)
+The isGameOver function returns true only if all ships are ‘sunk’ (15 points)
+Program has appropriate comments (15 points)
+Deliverable
+Upload your finished game to Canvas on or before 11:59 pm ET on Wednesday.
+•    Add your file by selecting "Upload" or by dragging and dropping the file.
+•    Select "Submit Assignment" to turn in your assignment.

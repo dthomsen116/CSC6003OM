@@ -1,0 +1,17 @@
+David Thomsen
+Project One Algortihm
+
+1: Randomly generate a Battleship board that is 10x10 with 5 ships
+2: Display this board to the user
+3: Ask for user input (column)
+4: Check if this is a valid input (if not repeat steps 3 and 4)
+5: Ask for user input (Row)
+6: Check if this is a valid input (if not repeat steps 5 and 6)
+7: Using the user input, check if this is a valid shot
+8: Update the board according to the valid shot
+9: Check to see if game end contions have been met (All ships sunk)
+10: If the conditions were met, end the game and congratulate the user.
+11: If the conditions were not met, repeat steps 3-11 until the game is over. 
+
+
+Link to Github: https://github.com/dthomsen116/CSC6003OM
