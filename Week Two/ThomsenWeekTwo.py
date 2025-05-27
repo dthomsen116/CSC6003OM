@@ -1,6 +1,6 @@
 import random
 
-# Global variables for the 
+# Global variables for the grid size as well as the number of ships
 grid_size = 10
 num_ships = 5
 
