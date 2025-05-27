@@ -1,17 +1,13 @@
 David Thomsen
-Project One Algortihm
+Project Two Algortihm
 
-1: Randomly generate a Battleship board that is 10x10 with 5 ships
-2: Display this board to the user
-3: Ask for user input (column)
-4: Check if this is a valid input (if not repeat steps 3 and 4)
-5: Ask for user input (Row)
-6: Check if this is a valid input (if not repeat steps 5 and 6)
-7: Using the user input, check if this is a valid shot
-8: Update the board according to the valid shot
-9: Check to see if game end contions have been met (All ships sunk)
-10: If the conditions were met, end the game and congratulate the user.
-11: If the conditions were not met, repeat steps 3-11 until the game is over. 
-
+1: Define the board size and number of ships
+2: Using the setupBoard() func, create a board that will be used for the current game
+3: Show the user the board using the drawBoard() function
+4: Ask the user for two guesses; a row value and a column value
+5: Check the user input to see if a ship was hit using the checkBoard() function
+6: Inform the user that they hit a ship or missed
+7: Loop through steps 3-7 until there are no more ships to be hit
+8: When all ships have been sunk, let the user know they won!
 
 Link to Github: https://github.com/dthomsen116/CSC6003OM
