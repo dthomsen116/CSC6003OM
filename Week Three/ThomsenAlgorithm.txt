@@ -1,0 +1,15 @@
+David Thomsen
+Project Three Algortihm
+
+1. Choose a selected text file that is read and saved as a variable  
+2. Present a menu to the user and allow them to choose a function to operate on the text file
+3. The user chooses one of the following funtions to edit the text file:
+    1. allWordCount - Show the top 5 most commonly used words in the text document.
+    2. singleWordCount - user inputs a word and the amount of times that word shows is returned
+    3. replaceWord - given two inputs, search for the first input and replace it with the second
+    4. addText - takes user input and appends it to the end of the text file
+    5. deleteText - takes user input and deletes all instances of that input in the text file
+    6. highlight - searches for the users input and highlights all instances of the word. 
+    7. exit - breaks the loop and closes the program
+4. After each choice, save the text file
+5. Repeat until the user would like to exit the program. 
