@@ -1,0 +1,13 @@
+1. Start with an empty dictionary to store users.
+2. Display a menu with options.
+3. If the user chooses:
+    Add User: Prompt for username and create a User object with an empty music collection.
+    Change User: List all users, and allow switching active user.
+4.If an active user is selected:
+    Add Song: Input title and artist, and add to collection.
+    Retrieve: Input title, find and display artist.
+    Update: Input title and new artist, update collection.
+    Delete: Input title, remove from collection.
+    Display All: Show all songs and artists in collection.
+5.Repeat until exit (you may add an exit option if needed).
+
