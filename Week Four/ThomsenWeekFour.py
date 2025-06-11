@@ -30,10 +30,10 @@ class User:
     # function to display all songs in the user's collection
     def display_songs(self):
         if not self.collection:
-            print("No songs in the collection.")
+            print("\033[33mNo songs in the collection.\033[0m")
         else:
             for title, artist in self.collection.items():
-                print(f"{title} by {artist}")
+                print(f"\033[34m{title}\033[0m by \033[36m{artist}\033[0m")
 
 # variables to store all users as well as the current user. 
 users = {}
@@ -41,91 +41,91 @@ current_user = None
 
 while True:
     # main loop for the menu (checks if there is a current user and changes the menu accordingly)
-    print("\n===Menu===")
+    print("\n\033[1m=== Menu ===\033[0m")
     if current_user:
-        print(f"==User {current_user.name}==")
-    print("1) Add user")
+        print(f"\033[1;35m== User {current_user.name} ==\033[0m")
+    print("1) \033[32mAdd user\033[0m")
     if current_user:
-        print("2) Change User")
-        print("3) Add a song")
-        print("4) Retrieve song details")
-        print("5) Update song details")
-        print("6) Delete a song")
-        print("7) Display all songs")
-    print("0) Exit")
-    choice = input("Enter input here: ")
+        print("2) \033[32mChange User\033[0m")
+        print("3) \033[32mAdd a song\033[0m")
+        print("4) \033[32mRetrieve song details\033[0m")
+        print("5) \033[32mUpdate song details\033[0m")
+        print("6) \033[32mDelete a song\033[0m")
+        print("7) \033[32mDisplay all songs\033[0m")
+    print("0) \033[31mExit\033[0m")
+    choice = input("\033[1mEnter input here:\033[0m ")
 
     # choice 1 - adding a new user and checking if the user already exists
     if choice == "1":
-        username = input("Enter UserName: ")
+        username = input("\033[1mEnter Username:\033[0m ")
         if username in users:
-            print("User already exists.")
+            print("\033[33mUser already exists.\033[0m")
         else:
             users[username] = User(username)
-            print(f"User {username} added.")
+            print(f"\033[32mUser {username} added.\033[0m")
             if not current_user:
                 current_user = users[username]
     
     # choice 2 - changing the current user from the list of users
     elif choice == "2" and current_user:
         if not users:
-            print("No users available.")
+            print("\033[33mNo users available.\033[0m")
             continue
-        print("Select user:")
+        print("\033[1mSelect user:\033[0m")
         usernames = list(users.keys())
         for i, name in enumerate(usernames, 1):
-            print(f"{i}) {name}")
+            print(f"{i}) \033[34m{name}\033[0m")
 
         try:
-            index = int(input("Enter input here: ")) - 1
+            index = int(input("\033[1mEnter input here:\033[0m ")) - 1
             current_user = users[usernames[index]]
-            print(f"Switched to user {usernames[index]}.")
+            print(f"\033[32mSwitched to user {usernames[index]}.\033[0m")
         except (ValueError, IndexError):
-            print("Invalid selection.")
+            print("\033[31mInvalid selection.\033[0m")
 
     # choice 3 - add a song and the artist to a collection
     elif choice == "3" and current_user:
-        title = input("Enter song title: ")
-        artist = input("Enter song artist: ")
+        title = input("\033[1mEnter song title:\033[0m ")
+        artist = input("\033[1mEnter song artist:\033[0m ")
         current_user.add_song(title, artist)
-        print("Song added.")
+        print("\033[32mSong added.\033[0m")
 
     # choice 4 - locate a song by title and provide the artist
     elif choice == "4" and current_user:
-        title = input("Enter song title: ")
+        title = input("\033[1mEnter song title:\033[0m ")
         artist = current_user.retrieve_song(title)
         if artist:
-            print(f"{title} by {artist}")
+            print(f"\033[34m{title}\033[0m by \033[36m{artist}\033[0m")
         else:
-            print("Song not found.")
+            print("\033[33mSong not found.\033[0m")
 
     # choice 5 - change the artist of a song, searching by title
     elif choice == "5" and current_user:
-        title = input("Enter song title: ")
+        title = input("\033[1mEnter song title:\033[0m ")
         if title in current_user.collection:
-            new_artist = input("Enter new artist: ")
+            new_artist = input("\033[1mEnter new artist:\033[0m ")
             current_user.update_song(title, new_artist)
-            print("Song updated.")
+            print("\033[32mSong updated.\033[0m")
         else:
-            print("Song not found.")
+            print("\033[33mSong not found.\033[0m")
 
     # choice 6 - delete a song by title
     elif choice == "6" and current_user:
-        title = input("Enter song title: ")
+        title = input("\033[1mEnter song title:\033[0m ")
         if current_user.delete_song(title):
-            print("Song deleted.")
+            print("\033[32mSong deleted.\033[0m")
         else:
-            print("Song not found.")
+            print("\033[33mSong not found.\033[0m")
 
     # choice 7 - display all songs for the current user
     elif choice == "7" and current_user:
-        print("Songs in your collection:")
+        print("\033[1mSongs in your collection:\033[0m")
         current_user.display_songs()
 
     # choice 0 - exit the program
     elif choice == "0":
-        print("Exiting program. Goodbye!")
+        print("\033[31mExiting program. Goodbye!\033[0m")
         break
 
     else:
-        print("Invalid selection. Please try again.")
+        print("\033[31mInvalid selection. Please try again.\033[0m")
