@@ -35,12 +35,9 @@ class User:
             for title, artist in self.collection.items():
                 print(f"{title} by {artist}")
 
-# dictionary for all users
+# variables to store all users as well as the current user. 
 users = {}
-
-# var to track current user
 current_user = None
-
 
 while True:
     # main loop for the menu (checks if there is a current user and changes the menu accordingly)

@@ -1,3 +1,7 @@
+David Thomsen
+Project Four Algortihm
+
+
 1. Start with an empty dictionary to store users.
 2. Display a menu with options.
 3. If the user chooses:
