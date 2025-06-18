@@ -1,0 +1,20 @@
+David Thomsen
+Project Five Algortihm
+
+1. Start by creating a root "folder" as the base of the folder structure.
+2. Set a currentFolder variable to point to the folder.
+3. Display a menu with options:
+   - Add File
+   - Add Folder
+   - Select Folder
+   - Print Folder
+   - Exit
+4. If the user chooses:
+   - Add File: Prompt for a file name and add it to currentFolder.
+   - Add Folder: Prompt for a folder name, create a new Folder object, and add it to currentFolder as long as the folder doesn't exist already.
+   - Select Folder:
+     - Recursively list all folders from the root with numbered choices.
+     - Let the user select one by number.
+     - Update currentFolder to the selected folder.
+   - Print Folder: Display current folder name, files, and subfolders using indentation.
+5. Repeat the menu until the user selects Exit.
