@@ -109,7 +109,6 @@ def main():
     # list for all animals in the zoo
     zoo = []
 
-    # main loop to run the zoo menus
     while True:
         show_main_menu()
         choice = input("User Input: ")
@@ -121,23 +120,43 @@ def main():
             name = input("Input Name: ")
             species = input("User Input Species: ")
 
+            # shorter as this does not need float validation/error handling
             if animal_type == "1":
                 fur = input("User Input Fur Color: ")
                 zoo.append(Bear(name, species, fur))
                 print("Bear added to zoo.")
 
+            # these include a check to insure the user enters a number
             elif animal_type == "2":
-                weight = float(input("User Input Weight (in kg): "))
+                while True:
+                    weight_input = input("User Input Weight (in kg): ")
+                    try:
+                        weight = float(weight_input)
+                        break
+                    except ValueError:
+                        print("Invalid input. Please enter a numeric value for weight.")
                 zoo.append(Elephant(name, species, weight))
                 print("Elephant added to zoo.")
 
             elif animal_type == "3":
-                height = float(input("User Input Height (in ft): "))
+                while True:
+                    height_input = input("User Input Height (in ft): ")
+                    try:
+                        height = float(height_input)
+                        break
+                    except ValueError:
+                        print("Invalid input. Please enter a numeric value for height.")
                 zoo.append(Penguin(name, species, height))
                 print("Penguin added to zoo.")
 
             elif animal_type == "4":
-                distance = float(input("User Input Swing Distance (in ft): "))
+                while True:
+                    distance_input = input("User Input Swing Distance (in ft): ")
+                    try:
+                        distance = float(distance_input)
+                        break
+                    except ValueError:
+                        print("Invalid input. Please enter a numeric value for swing distance.")
                 zoo.append(Monkey(name, species, distance))
                 print("Monkey added to zoo.")
 
@@ -155,20 +174,30 @@ def main():
         elif choice == "3":
             show_print_menu()
             type_choice = input("User Input: ")
-            type_map = {
-                "1": Bear,
-                "2": Elephant,
-                "3": Penguin,
-                "4": Monkey
-            }
 
-            selected_class = type_map.get(type_choice)
-            if selected_class:
+            if type_choice == "1":
                 for animal in zoo:
-                    if isinstance(animal, selected_class):
+                    if isinstance(animal, Bear):
                         print(animal.info())
+
+            elif type_choice == "2":
+                for animal in zoo:
+                    if isinstance(animal, Elephant):
+                        print(animal.info())
+
+            elif type_choice == "3":
+                for animal in zoo:
+                    if isinstance(animal, Penguin):
+                        print(animal.info())
+
+            elif type_choice == "4":
+                for animal in zoo:
+                    if isinstance(animal, Monkey):
+                        print(animal.info())
+
             else:
                 print("Invalid selection.")
+
 
         elif choice == "0":
             print("Exiting. Goodbye!")
