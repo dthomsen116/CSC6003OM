@@ -1,2 +1,17 @@
 David Thomsen
 Project Six Algortihm
+
+1. Create a base Animal class with name and species attributes, and include make_sound() and info() methods.
+2. Define subclasses: Bear, Elephant, Penguin, and Monkey. Each has a unique attribute that is inherited from the Animal class.
+3. Use an empty list (zoo) to store all animal objects.
+4. Display a main menu with options:
+   - Add Animal
+   - Print All
+   - Print Specific
+   - Exit
+5. If the user chooses:
+   - Add Animal: Show animal type menu, prompt for name and species, then request type-specific data and add the created object to zoo.
+   - Print All: Loop through the zoo list and print each animal’s info.
+   - Print Specific: Show type menu, filter zoo list by selected class type, and print info for matching animals.
+6. Repeat the menu until the user selects Exit.
+
