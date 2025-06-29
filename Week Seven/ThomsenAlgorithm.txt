@@ -1,0 +1,28 @@
+David Thomsen  
+Project Seven Algorithm – Mythical Creature Family Tree
+
+1. Create a CreatureNode class representing a creature in the family tree. Each node stores a name and references to a left and right child node.
+2. Create a CreatureTree class that manages the binary tree. It includes methods to:
+   - Add the root node.
+   - Add children to an existing node (left or right).
+   - Traverse and collect all nodes.
+   - Print the tree structure sideways using connecting lines for clear visualization.
+   - Find and print the ancestors of a specific node.
+3. In the main() function, initialize an empty tree.
+4. Display a main menu with the following options:
+   - Add Root Creature
+   - Add Creature
+   - Print All
+   - Print Specific
+5. If the user selects:
+   - Add Root Creature: Prompt for the name and add the root node if none exists.
+   - Add Creature:
+     - Get all current nodes in the tree.
+     - Display a numbered list so the user can select a parent node.
+     - Ask the user to specify left or right child (L/R).
+     - Prompt for the new creature’s name and attach it to the selected parent.
+   - Print All:
+     - Call printTree() to recursively print the structure with indented connectors (└──, ┌──, │), showing the tree sideways with root at the center-left.
+   - Print Specific:
+     - Ask for the name of a node and display its ancestry by recursively tracing parent paths back to the root.
+6. Continue showing the menu until the user exits the program manually (no explicit exit option in current version).
