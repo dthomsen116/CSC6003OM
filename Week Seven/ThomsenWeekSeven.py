@@ -1,13 +1,18 @@
+# class for creating a creature node on the tree
 class CreatureNode:
     def __init__(self, name):
         self.name = name
         self.left = None
         self.right = None
 
+# class to create the creature tree structure and manage nodes
 class CreatureTree:
+
+    # initialize the tree with no root
     def __init__(self):
         self.root = None
 
+    # method to add a root node to the tree
     def addRoot(self, name):
         if self.root is None:
             self.root = CreatureNode(name)
@@ -15,17 +20,20 @@ class CreatureTree:
         else:
             print("\033[33mRoot already exists.\033[0m")
 
+    # method to get all nodes in the tree
     def getAllNodes(self):
         nodes = []
         self._collectNodes(self.root, nodes)
         return nodes
 
+    # helper method to collect nodes recursively
     def _collectNodes(self, node, nodes):
         if node is not None:
             nodes.append(node)
             self._collectNodes(node.left, nodes)
             self._collectNodes(node.right, nodes)
 
+    # method to add a child node to a parent node (L or R)
     def addChild(self, parentNode, childName, direction):
         if direction.upper() == "L":
             if parentNode.left is None:
@@ -42,6 +50,8 @@ class CreatureTree:
         else:
             print("\033[31mInvalid direction. Use 'L' or 'R'.\033[0m")
 
+    # method to print the tree structure in a readable format
+    # using unicode characters instead of slashes/backslashes for better readability
     def printTree(self, node=None, indent="", isLeft=True):
         if node is None:
             node = self.root
@@ -61,6 +71,7 @@ class CreatureTree:
         if indent == "":
             print("\033[35m======================\033[0m")
 
+    # method to find and print the ancestors of a specific node
     def findAncestors(self, node, targetName, path):
         if node is None:
             return False
@@ -72,6 +83,7 @@ class CreatureTree:
             return True
         return False
 
+    # method to print the ancestors of a specific creature
     def printAncestors(self, name):
         path = []
         if self.findAncestors(self.root, name, path):
@@ -80,7 +92,7 @@ class CreatureTree:
         else:
             print(f"\033[31m{name} not found in the tree.\033[0m")
 
-
+# function to display a menu for selecting a parent node
 def displayNodeSelectionMenu(nodes):
     print("\n\033[35m=== Select Parent Node ===\033[0m")
     for i, node in enumerate(nodes):
@@ -96,10 +108,12 @@ def displayNodeSelectionMenu(nodes):
         except ValueError:
             print("\033[31mInvalid input. Please enter a valid number.\033[0m")
 
-
+# main func
 def main():
+    # initialize the creature tree
     tree = CreatureTree()
 
+    # main loop for user interaction
     while True:
         print("\n\033[35m=== Menu ===\033[0m")
         if tree.root is None:
@@ -111,10 +125,13 @@ def main():
         print("=============")
         choice = input("\033[35mUser Input: \033[0m")
 
+        # handle user choices
+        # choice zero to add root creature
         if choice == "0" and tree.root is None:
             name = input("\033[35mName: \033[0m")
             tree.addRoot(name)
-
+        
+        # choice one to add creature
         elif choice == "1":
             nodes = tree.getAllNodes()
             if not nodes:
@@ -131,13 +148,16 @@ def main():
             name = input("\033[35mCreature name: \033[0m")
             tree.addChild(parent, name, direction)
 
+        # choice two to print all creatures
         elif choice == "2":
             tree.printTree()
 
+        # choice three to print specific creature and its ancestors
         elif choice == "3":
             name = input("\033[35mNode name: \033[0m")
             tree.printAncestors(name)
 
+        # error handling for invalid choices
         else:
             print("\033[31mInvalid selection or root already exists.\033[0m")
 

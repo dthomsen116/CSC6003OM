@@ -1,0 +1,69 @@
+David Thomsen
+Project Eight Algortihm
+
+1. Define an Account class to represent a customer’s bank account. Each account stores:
+   - A randomly generated 8-digit account number.
+   - First and last name of the account owner.
+   - 9-digit social security number(string).
+   - A 4-digit randomly generated PIN.
+   - A balance in cents.
+   - Includes methods for:
+     - Depositing and withdrawing funds.
+     - Validating the entered PIN.
+     - Printing account details with SSN masking and dollar formatting.
+
+2. Define a Bank class to manage up to 100 accounts. It includes methods to:
+   - Add a new account to the internal list.
+   - Remove an account by account number.
+   - Find and return an account by account number.
+   - Add monthly interest to all accounts based on an annual percentage.
+
+3. Define a BankUtility class with helper methods:
+   - Prompt the user for a string.
+   - Prompt the user for a positive number (with re-prompting on invalid input).
+   - Convert dollar amounts to cents.
+   - Generate a random integer within a specified range.
+   - Check if a string is numeric (used for PIN validation).
+
+4. Define a CoinCollector class to calculate the total value of coins from a string input.
+   - Valid characters: P, N, D, Q, H, W.
+   - Ignore invalid characters and show a warning.
+   - Return the total coin value in cents.
+
+5. Implement a helper function called promptForAccountNumberAndPIN(bank) that:
+   - Prompts the user to enter an account number.
+   - Verifies the account exists in the bank.
+   - Prompts the user for a PIN.
+   - Validates the PIN against the account.
+   - Returns the Account object or None if validation fails.
+
+6. In the main() function:
+   - Create a Bank object to manage all accounts.
+   - Enter a loop to repeatedly display a menu with the following options:
+     1. Open an account
+     2. Get account information and balance
+     3. Change PIN
+     4. Deposit money in account
+     5. Transfer money between accounts
+     6. Withdraw money from account
+     7. ATM withdrawal
+     8. Deposit change
+     9. Close an account
+     10. Add monthly interest to all accounts
+     11. End Program
+
+7. For each menu option:
+   - Option 1: Prompt for first name, last name, and SSN. Generate account number and PIN.
+     Create an Account and add it to the Bank.
+   - Option 2: Prompt for account number and PIN. If valid, display account info.
+   - Option 3: Prompt for current PIN. Then prompt for a new PIN twice and validate before saving.
+   - Option 4: Prompt for amount to deposit. Convert to cents and update the balance.
+   - Option 5: Prompt for two accounts and PINs. Transfer the specified amount if funds are sufficient.
+   - Option 6: Prompt for amount to withdraw. Withdraw if sufficient balance exists.
+   - Option 7: Prompt for ATM withdrawal in multiples of $5. Show bill breakdown and update balance.
+   - Option 8: Prompt for a coin string. Calculate total and deposit to account.
+   - Option 9: Prompt for account number and PIN. Remove the account if valid.
+   - Option 10: Prompt for an interest rate. Apply monthly interest to all accounts.
+   - Option 11: Exit the loop and end the program.
+
+8. Loop the menu continuously until the user selects option 11 to end the program.
