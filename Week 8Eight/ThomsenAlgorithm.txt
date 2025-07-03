@@ -13,22 +13,22 @@ Project Eight Algortihm
      - Printing account details with SSN masking and dollar formatting.
 
 2. Define a Bank class to manage up to 100 accounts. It includes methods to:
-   - Add a new account to the internal list.
+   - Add a new account.
    - Remove an account by account number.
    - Find and return an account by account number.
    - Add monthly interest to all accounts based on an annual percentage.
 
-3. Define a BankUtility class with helper methods:
+3. Define a CoinCollector class to calculate the total value of coins from a string input.
+   - Valid characters: P, N, D, Q, H, W.
+   - Ignore invalid characters and show a warning.
+   - Return the total coin value in cents.
+ 
+4. Define a BankUtility class with helper methods:
    - Prompt the user for a string.
    - Prompt the user for a positive number (with re-prompting on invalid input).
    - Convert dollar amounts to cents.
    - Generate a random integer within a specified range.
    - Check if a string is numeric (used for PIN validation).
-
-4. Define a CoinCollector class to calculate the total value of coins from a string input.
-   - Valid characters: P, N, D, Q, H, W.
-   - Ignore invalid characters and show a warning.
-   - Return the total coin value in cents.
 
 5. Implement a helper function called promptForAccountNumberAndPIN(bank) that:
    - Prompts the user to enter an account number.
